@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "tool": {
+      "type": "string",
+      "description": "The tool to be called."
+    },
+    "args": {
+      "type": "object",
+      "description": "The arguments for the tool."
+    },
+    "seed": {
+      "type": ["string", "number"],
+      "description": "A seed for the tool execution."
+    }
+  },
+  "required": ["tool", "args", "seed"]
+}
