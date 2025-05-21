@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "nodenext",
     "target": "es2020",
     "outDir": "./dist",
     "rootDir": "./src",
@@ -8,7 +8,8 @@
     "strict": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "moduleResolution": "node",
+    "moduleResolution": "nodenext",
+    "jsx": "react-jsx",
     "sourceMap": true, /* Emit source maps for debugging */
     "declaration": true, /* Emit .d.ts files for library consumers */
     "forceConsistentCasingInFileNames": true, /* Disallow inconsistently-cased references to the same file. */

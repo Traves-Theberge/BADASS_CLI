@@ -1,0 +1,11 @@
+{
+  "entryPoints": ["./src"],
+  "out": "./docs/api",
+  "tsconfig": "./tsconfig.json",
+  "entryPointStrategy": "expand",
+  "excludePrivate": true,
+  "excludeNotDocumented": true,
+  "excludeProtected": true,
+  "readme": "none",
+  "theme": "default"
+}

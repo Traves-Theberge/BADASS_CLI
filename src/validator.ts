@@ -4,12 +4,33 @@ import Ajv, { Schema } from 'ajv';
 const ajv = new Ajv({ allErrors: true }); // allErrors: true to get all validation errors
 
 /**
- * Validates data against a given JSON schema.
+ * Validates data against a given JSON schema using Ajv.
  *
- * @param schema The JSON schema object.
- * @param data The data to validate.
+ * @param schema The JSON schema object (should conform to Ajv's Schema type).
+ * @param data The data to validate against the schema.
  * @returns True if the data is valid according to the schema, false otherwise.
  *          Logs validation errors to the console if validation fails.
+ * @example
+ * ```typescript
+ * import { validate } from './validator'; // Adjust import path as needed
+ * import acmSchema from './schemas/acm.schema.json'; // Example schema
+ *
+ * const validData = {
+ *   tool: "exampleTool",
+ *   args: { param1: "value1" },
+ *   seed: 12345
+ * };
+ *
+ * const isValid = validate(acmSchema, validData);
+ * console.log(isValid ? "Data is valid!" : "Data is invalid.");
+ *
+ * const invalidData = {
+ *   tool: "anotherTool"
+ *   // args and seed are missing
+ * };
+ * const isInvalid = validate(acmSchema, invalidData);
+ * console.log(isInvalid ? "Data is valid!" : "Data is invalid."); // Should be invalid
+ * ```
  */
 export function validate(schema: Schema, data: any): boolean {
   try {

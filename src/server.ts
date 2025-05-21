@@ -4,7 +4,7 @@ import fastify, { FastifyInstance } from 'fastify';
 const server: FastifyInstance = fastify({ logger: true });
 
 // Define a simple GET route
-server.get('/health', async (request, reply) => {
+server.get('/health', async (_request, _reply) => {
   return { status: 'ok' };
 });
 
